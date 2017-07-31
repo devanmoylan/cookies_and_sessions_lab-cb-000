@@ -1,0 +1,12 @@
+<%= form_tag '/' do %>
+    <%= text_field_tag :product, params[:product] %>
+    <%= submit_tag "add to cart" %>
+<% end %>
+
+<% unless @cart.nil? %>
+    <% @cart.each do |product| %>
+        <% unless product.nil? %>
+            <%= product %>
+        <% end %>
+    <% end %>
+<% end %>
